@@ -18,12 +18,12 @@ body {
 
 /* transparent borders to simulate a min-margin property */
 h1 {
-  margin: 10% auto auto auto;
+  /*margin: 10% auto auto auto;*/
   border: transparent solid 15px;
 }
 
 h2 {
-  margin: 4% auto auto auto;
+  /*margin: 4% auto auto auto;*/
   border: transparent solid 15px;
 }
 
