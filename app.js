@@ -20,6 +20,7 @@ var isItNight = false;
     //'https://cors-anywhere.herokuapp.com/' prefix allows https json api calls
     var api = "https://cors-anywhere.herokuapp.com/api.openweathermap.org/data/2.5/weather?lat=" +
     lat + "&lon=" + lon + "&appid=5a064f39448c6bddecac93165ac4fcb1&lang=en";
+    console.log(api);
     var api2 = "https://cors-anywhere.herokuapp.com/api.sunrise-sunset.org/json?lat=" +
     lat + "&lng=" + lon + "&date=" + moment().format('YYYY-MM-DD') + "&formatted=0";
     console.log(api2);
@@ -119,7 +120,7 @@ var isItNight = false;
             case 310:
             case 311:
             case 313:
-              switchIcon('wi wi-night-alt-sprinkle', 'wi wi-sprinkle');
+              switchIcon('wi wi-sprinkle', 'wi wi-night-alt-sprinkle');
               break;
             case 302:
             case 312:
@@ -221,7 +222,7 @@ var isItNight = false;
 
   //Remove focus styling after user has clicked button and moved cursor away
   $("#temp-toggle").mousedown(function(e){
-e.preventDefault();
+    e.preventDefault();
   });
 
 });
