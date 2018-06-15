@@ -16,9 +16,13 @@ var isItNight = false;
     lat = position.coords.latitude;
     lon = position.coords.longitude;
 
+
     //'https://cors-anywhere.herokuapp.com/' prefix allows https json api calls
-    var api = "https://cors-anywhere.herokuapp.com/api.openweathermap.org/data/2.5/weather?lat="+ lat + "&lon=" + lon + "&appid=5a064f39448c6bddecac93165ac4fcb1&lang=en";
-    var api2 = "https://cors-anywhere.herokuapp.com/api.sunrise-sunset.org/json?lat="+ lat + "&lng="+lon+"&date=today&formatted=0";
+    var api = "https://cors-anywhere.herokuapp.com/api.openweathermap.org/data/2.5/weather?lat=" +
+    lat + "&lon=" + lon + "&appid=5a064f39448c6bddecac93165ac4fcb1&lang=en";
+    var api2 = "https://cors-anywhere.herokuapp.com/api.sunrise-sunset.org/json?lat=" +
+    lat + "&lng=" + lon + "&date=" + moment().format('YYYY-MM-DD') + "&formatted=0";
+    console.log(api2);
 
      function dayNight () {
        $.ajax({
@@ -27,6 +31,9 @@ var isItNight = false;
            var time = Math.round((new Date).getTime()/1000);
            var sunrise = Math.round(moment.utc(response.results.sunrise)/1000);
            var sunset = Math.round(moment.utc(response.results.sunset)/1000);
+           console.log("sunrise is " + sunrise);
+           console.log("sunset is " + sunset);
+           console.log("time is " + time);
 
            if ( time < sunrise || time >= sunset ) {
              $('body').toggleClass('daytime nighttime');
@@ -204,7 +211,9 @@ var isItNight = false;
           }
         });
       }
+
     dayNight();
+
     });
   } else {
   alert("Sorry! Your browser won't let us see where you're located. This may be due to an HTTP connection. To switch to HTTPS, click the link at the bottom of the page :-)");
