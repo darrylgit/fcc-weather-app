@@ -7,13 +7,24 @@ body {
   /*'Sakura' from www.toptal.com/designers/subtlepatterns/; found through makerbook.net -> Textures -> Subtle Patterns */
 }
 
-.nighttime {
+.nighttime:before {
+    content: "";
+    display: block;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
     height: 100%;
-    margin: 0;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background: linear-gradient(#00001a, #00004d) fixed;
-    color: white;
+    z-index: -10;
+    background: linear-gradient(#00001a, #00004d) no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.nighttime {
+  color: white;
 }
 
 /* transparent borders to simulate a min-margin property */
@@ -36,6 +47,7 @@ h4 {
 #weather-icon {
   margin: 4% auto auto auto;
   font-size: 55px;
+  border: transparent solid 5px;
 }
 
 #https-link {

@@ -21,6 +21,7 @@ var isItNight = false;
     var api = "https://cors-anywhere.herokuapp.com/api.openweathermap.org/data/2.5/weather?lat=" +
     lat + "&lon=" + lon + "&appid=5a064f39448c6bddecac93165ac4fcb1&lang=en";
     console.log(api);
+
     var api2 = "https://cors-anywhere.herokuapp.com/api.sunrise-sunset.org/json?lat=" +
     lat + "&lng=" + lon + "&date=" + moment().format('YYYY-MM-DD') + "&formatted=0";
     console.log(api2);
